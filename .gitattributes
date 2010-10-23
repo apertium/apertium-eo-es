@@ -17,4 +17,7 @@
 /configure.ac -text
 /es-eo.prob -text svneol=unset#unset
 /modes.xml -text
+/nova_versio.sh -text
+/retraduku.sh -text
+tekstaro/es.crp.txt -text
 /transliterate.sh -text
