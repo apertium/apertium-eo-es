@@ -18,6 +18,8 @@
 /autogen.sh -text
 /configure.ac -text
 /es-eo.prob -text svneol=unset#unset
+/kompletigu_eo_dix.sh -text
+/krei_monodix.pl -text
 /modes.xml -text
 /nova_versio.sh -text
 /outstanding-tests.sh -text
