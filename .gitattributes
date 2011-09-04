@@ -30,6 +30,5 @@
 /nova_versio.sh -text
 /outstanding-tests.sh -text
 /regression-tests.sh -text
-/retraduku.sh -text
 /retraduku_cg.sh -text
 tekstaro/es.crp.txt -text
