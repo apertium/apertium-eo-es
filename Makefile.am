@@ -1,4 +1,3 @@
-VERSION=0.9.1
 LANG1=eo
 LANG2=es
 PREFIX1=$(LANG2)-$(LANG1)
@@ -13,6 +12,8 @@ TARGETS_COMMON = $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin $(PREFIX1).autog
      modes $(PREFIX1).mode $(PREFIX2).mode
 
 TARGETS = $(TARGETS_COMMON)
+
+@ap_include@
 
 $(PREFIX1).antaux1_t2x.bin: $(BASENAME).$(PREFIX1).antaux1_t2x
 	apertium-validate-interchunk $(BASENAME).$(PREFIX1).antaux1_t2x
@@ -86,33 +87,16 @@ apertium_eo_es_DATA=$(PREFIX1).automorf.bin \
 		    $(PREFIX1).antaux1_t2x.bin $(PREFIX1).antaux2_t2x.bin $(PREFIX1).antaux3_t2x.bin $(PREFIX1).antaux4_t2x.bin \
 		    $(PREFIX1).antaux5_t2x.bin $(PREFIX1).t2x.bin \
 		    $(PREFIX1).t3x.bin \
-                    $(PREFIX1).mode $(PREFIX2).mode
+		    $(BASENAME).$(PREFIX1).t1x \
+		    $(BASENAME).$(PREFIX1).antaux1_t2x $(BASENAME).$(PREFIX1).antaux2_t2x $(BASENAME).$(PREFIX1).antaux3_t2x $(BASENAME).$(PREFIX1).antaux4_t2x \
+		    $(BASENAME).$(PREFIX1).antaux5_t2x $(BASENAME).$(PREFIX1).t2x \
+		    $(BASENAME).$(PREFIX1).t3x
 #		    $(BASENAME).$(PREFIX1).t1x $(BASENAME).$(PREFIX1).antaux5_t2x $(BASENAME).$(PREFIX1).t3x
 
 apertium_eo_esdir=$(prefix)/share/apertium/apertium-$(PREFIX1)/
-apertium_eo_esmodesdir=$(prefix)/share/apertium/modes/
 
-$(PREFIX1).mode: modes.xml
-	apertium-gen-modes modes.xml
-	cp *.mode modes/
+noinst_DATA=modes/$(PREFIX1).mode
 
-$(PREFIX2).mode: modes.xml
-	apertium-gen-modes modes.xml
-	cp *.mode modes/
-
-modes: modes.xml
-	apertium-gen-modes modes.xml
-
-install-data-local:
-	apertium-gen-modes modes.xml apertium-$(PREFIX1)
-	test -d $(DESTDIR)$(apertium_eo_esmodesdir) || mkdir $(DESTDIR)$(apertium_eo_esmodesdir)
-	$(INSTALL_DATA) $(PREFIX1).mode $(DESTDIR)$(apertium_eo_esmodesdir)
-	$(INSTALL_DATA) $(PREFIX2).mode $(DESTDIR)$(apertium_eo_esmodesdir)
-	$(INSTALL_DATA) $(BASENAME).$(PREFIX1).t1x $(DESTDIR)$(apertium_eo_esdir)
-	$(INSTALL_DATA) $(BASENAME).$(PREFIX1).antaux1_t2x $(BASENAME).$(PREFIX1).antaux2_t2x $(BASENAME).$(PREFIX1).antaux3_t2x $(BASENAME).$(PREFIX1).antaux4_t2x $(DESTDIR)$(apertium_eo_esdir)
-	$(INSTALL_DATA) $(BASENAME).$(PREFIX1).antaux5_t2x $(BASENAME).$(PREFIX1).t2x $(DESTDIR)$(apertium_eo_esdir)
-	$(INSTALL_DATA) $(BASENAME).$(PREFIX1).t3x $(DESTDIR)$(apertium_eo_esdir)
-	$(INSTALL_DATA) $(PREFIX1).rlx.bin $(DESTDIR)$(apertium_eo_esdir)
-
+install-data-local: install-modes
 
 CLEANFILES = -rf $(TARGETS) modes 
