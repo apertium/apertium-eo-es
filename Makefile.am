@@ -100,3 +100,6 @@ noinst_DATA=modes/$(PREFIX1).mode
 install-data-local: install-modes
 
 CLEANFILES = -rf $(TARGETS) modes 
+
+test: all
+	apertium-regtest test

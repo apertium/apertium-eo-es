@@ -1,0 +1,14 @@
+[1uY1hEqX1qXd#0] ^ant<SN><m><sg><nom><nom>{^Ji<np><cog><mf><sp><4>$}$
+[/1uY1hEqX1qXd]
+[G37KNTx-hOoB#0] ^Det<DET><mf><sp><nom><nom>{^3231853%<num><percent><sp><4>$}$
+[/G37KNTx-hOoB]
+[RcqEVAly0MGc#0] ^default<default>{^“<lcit>$}$
+[/RcqEVAly0MGc]
+[ijMf3ecDLzOn#0] ^default<default>{^"<cit>$}$
+[/ijMf3ecDLzOn]
+[io3oI9XtPhJ0#0] ^punt<sent>{^?<sent>$}$
+[/io3oI9XtPhJ0]
+[poEKQq2qTVXt#0] ^default<default>{^«<lcit>$}$
+[/poEKQq2qTVXt]
+[u-69h54d_2kY#0] ^Unknown<unknown>{^*z$}$
+[/u-69h54d_2kY]
