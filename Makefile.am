@@ -93,7 +93,7 @@ apertium_eo_es_DATA=$(PREFIX1).automorf.bin \
 		    $(BASENAME).$(PREFIX1).t3x
 #		    $(BASENAME).$(PREFIX1).t1x $(BASENAME).$(PREFIX1).antaux5_t2x $(BASENAME).$(PREFIX1).t3x
 
-apertium_eo_esdir=$(prefix)/share/apertium/apertium-$(PREFIX1)/
+apertium_eo_esdir=$(prefix)/share/apertium/$(BASENAME)/
 
 noinst_DATA=modes/$(PREFIX1).mode
 
